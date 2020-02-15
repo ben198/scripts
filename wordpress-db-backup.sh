@@ -7,4 +7,6 @@ mkdir -p ~/wp-backups
 mysqldump -u $WORDPRESS_DB_USERNAME $WORDPRESS_DB_NAME > ~/wp-backups/wordpress.sql
 
 # Backup website
-sudo zip -r ~/wp-backups/wordpress.zip $WORDPRESS_PATH
+pushd $WORDPRESS_PATH
+sudo zip -r ~/wp-backups/wordpress.zip .
+popd
